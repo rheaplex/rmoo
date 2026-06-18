@@ -44,24 +44,24 @@ jtext-tagged text to the read function."
   (insert-before-markers "\n"))
 
 (defvar jtext-header-actions '(jtext-header-action-1
-				      jtext-header-action-2
-				      jtext-header-action-3
-				      jtext-header-action-4
-				      jtext-header-action-5
-				      jtext-header-action-6)
+				               jtext-header-action-2
+				               jtext-header-action-3
+				               jtext-header-action-4
+				               jtext-header-action-5
+				               jtext-header-action-6)
   "List of actions to take when given header of various levels.")
 
 (defvar jtext-header-faces '(jtext-header-1
-			     jtext-header-2
-			     jtext-header-3
-			     jtext-header-4
-			     jtext-header-5
-			     jtext-header-6))
+			                 jtext-header-2
+			                 jtext-header-3
+			                 jtext-header-4
+			                 jtext-header-5
+			                 jtext-header-6))
 
 (mapcar 'make-face jtext-header-faces)
-(mapcar (lambda (face) 
-	  (set-face-underline-p face t))
-	jtext-header-faces)
+;;(mapcar (lambda (face)
+;;	  (set-face-attribute face :underline t))
+;;	jtext-header-faces)
 
 (defun jtext-header-action-1 (start end)
   (add-text-properties start end (list 'jtext-start start 'end end))
